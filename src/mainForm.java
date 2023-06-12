@@ -197,20 +197,29 @@ public class mainForm extends JFrame {
                 //Debe imprimir todos los platos de forma ascendete
                 if (comboBoxOrder.getSelectedIndex() == 0) { //Si es 0 es por nombre
                     Ordenamiento.ordenarPorNombre(Menu.getListaPLatos());
-
-                    textAMostrar.setText(sb.toString());
+                    int index = Ordenamiento.buscarPorNombre(Menu.getListaPLatos(), textBuscarPlatoOrden.getText());
+                    if (index != -1) {
+                        textAMostrar.setText(Menu.getListaPLatos().get(index).toString());
+                    }
                 } else if (comboBoxOrder.getSelectedIndex() == 1) { //Es precio
                     Ordenamiento.ordenarPorPrecio(Menu.getListaPLatos());
-
-                    textAMostrar.setText(sb.toString());
+                    int index = Ordenamiento.buscarPorPrecio(Menu.getListaPLatos(), Double.parseDouble(textBuscarPlatoOrden.getText()));
+                    if (index != -1) {
+                        textAMostrar.setText(Menu.getListaPLatos().get(index).toString());
+                    }
                 } else if (comboBoxOrder.getSelectedIndex() == 2) { //Calorias
                     Ordenamiento.ordenarPorCalorias(Menu.getListaPLatos());
-
-                    textAMostrar.setText(sb.toString());
+                    int index = Ordenamiento.buscarPorCalorias(Menu.getListaPLatos(), Double.parseDouble(textBuscarPlatoOrden.getText()));
+                    if (index != -1) {
+                        textAMostrar.setText(Menu.getListaPLatos().get(index).toString());
+                    }
                 } else { //Tiempo de preparacion
                     Ordenamiento.ordenarPorTiempoPreparacion(Menu.getListaPLatos());
+                    int index = Ordenamiento.buscarPorTiempo(Menu.getListaPLatos(), Double.parseDouble(textBuscarPlatoOrden.getText()));
+                    if (index != -1) {
+                        textAMostrar.setText(Menu.getListaPLatos().get(index).toString());
+                    }
 
-                    textAMostrar.setText(sb.toString());
                 }
             }
         });
