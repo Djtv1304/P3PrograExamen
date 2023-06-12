@@ -174,9 +174,17 @@ public class mainForm extends JFrame {
                     }
                     textAMostrar.setText(sb.toString());
                 } else if (comboBoxOrder.getSelectedIndex() == 2) { //Calorias
-
+                    Ordenamiento.ordenarPorCalorias(Menu.getListaPLatos());
+                    for (Plato p:Menu.getListaPLatos()) {
+                        sb.append(p.toString());
+                    }
+                    textAMostrar.setText(sb.toString());
                 } else { //Tiempo de preparacion
-
+                    Ordenamiento.ordenarPorTiempoPreparacion(Menu.getListaPLatos());
+                    for (Plato p:Menu.getListaPLatos()) {
+                        sb.append(p.toString());
+                    }
+                    textAMostrar.setText(sb.toString());
                 }
             }
         });
@@ -185,6 +193,25 @@ public class mainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Este boton es para buscar un plato específico tomando en cuenta su atributo
+                StringBuilder sb = new StringBuilder();
+                //Debe imprimir todos los platos de forma ascendete
+                if (comboBoxOrder.getSelectedIndex() == 0) { //Si es 0 es por nombre
+                    Ordenamiento.ordenarPorNombre(Menu.getListaPLatos());
+
+                    textAMostrar.setText(sb.toString());
+                } else if (comboBoxOrder.getSelectedIndex() == 1) { //Es precio
+                    Ordenamiento.ordenarPorPrecio(Menu.getListaPLatos());
+
+                    textAMostrar.setText(sb.toString());
+                } else if (comboBoxOrder.getSelectedIndex() == 2) { //Calorias
+                    Ordenamiento.ordenarPorCalorias(Menu.getListaPLatos());
+
+                    textAMostrar.setText(sb.toString());
+                } else { //Tiempo de preparacion
+                    Ordenamiento.ordenarPorTiempoPreparacion(Menu.getListaPLatos());
+
+                    textAMostrar.setText(sb.toString());
+                }
             }
         });
     }

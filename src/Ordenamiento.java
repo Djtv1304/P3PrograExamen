@@ -52,4 +52,32 @@ public class Ordenamiento {
             }
     }
 
+    public static void ordenarPorCalorias(List<Plato> platos) {
+        int n = platos.size();
+        for (int i = 1; i < n; ++i) {
+            Plato key = platos.get(i);
+            int j = i - 1;
+
+            while (j >= 0 && platos.get(j).getCalorias() > key.getCalorias()) {
+                platos.set(j + 1, platos.get(j));
+                j = j - 1;
+            }
+            platos.set(j + 1, key);
+        }
+    }
+
+    public static void ordenarPorTiempoPreparacion(List<Plato> platos) {
+        int n = platos.size();
+        for (int i = 1; i < n; ++i) {
+            Plato key = platos.get(i);
+            int j = i - 1;
+
+            while (j >= 0 && platos.get(j).getCalorias() > key.getTiempoDePreparacion()) {
+                platos.set(j + 1, platos.get(j));
+                j = j - 1;
+            }
+            platos.set(j + 1, key);
+        }
+    }
+
 }
