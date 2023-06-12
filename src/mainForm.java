@@ -77,6 +77,8 @@ public class mainForm extends JFrame {
                 Menu.ingresarPlato(P3);
                 Menu.ingresarPlato(P4);
                 Menu.ingresarPlato(P5);
+
+                JOptionPane.showMessageDialog(null,"Datos quemados correctamente");
             }
         });
 
