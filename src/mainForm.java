@@ -37,9 +37,9 @@ public class mainForm extends JFrame {
 
         Menu = new MenuController();
         //Desactivacion inicial
-        textoModifPrecio.setEnabled(false);
-        textoModifCalorias.setEnabled(false);
-        textoModifPreparacion.setEnabled(false);
+        textoModifPrecio.setEditable(false);
+        textoModifCalorias.setEditable(false);
+        textoModifPreparacion.setEditable(false);
         eliminarButton.setEnabled(false);
 
 
@@ -83,7 +83,7 @@ public class mainForm extends JFrame {
         buscarModifButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                textoModifNombre.setEnabled(false);
+                textoModifNombre.setEditable(false);
                 //Tengo que desactivar los fields hasta hacer una nueva busqueda
                 if (!textoModifNombre.equals("")) {
 
@@ -91,9 +91,9 @@ public class mainForm extends JFrame {
 
                     if (platoEncontrado != null) {
 
-                        textoModifPrecio.setEnabled(true);
-                        textoModifCalorias.setEnabled(true);
-                        textoModifPreparacion.setEnabled(true);
+                        textoModifPrecio.setEditable(true);
+                        textoModifCalorias.setEditable(true);
+                        textoModifPreparacion.setEditable(true);
 
                         textoModifPrecio.setText(String.valueOf(platoEncontrado.getPrecio()));
                         textoModifCalorias.setText(String.valueOf(platoEncontrado.getCalorias()));
@@ -111,7 +111,7 @@ public class mainForm extends JFrame {
         modificarModifButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                textoModifNombre.setEnabled(true);
+                textoModifNombre.setEditable(true);
 
                 Plato platoEncontrado = Ordenamiento.buscarPlatoSecuencialPorNombre(Menu.getListaPLatos(),textoModifNombre.getText());
 
@@ -125,9 +125,9 @@ public class mainForm extends JFrame {
                 }
 
                 //Limpieza y desactivar
-                textoModifPrecio.setEnabled(false);
-                textoModifCalorias.setEnabled(false);
-                textoModifPreparacion.setEnabled(false);
+                textoModifPrecio.setEditable(false);
+                textoModifCalorias.setEditable(false);
+                textoModifPreparacion.setEditable(false);
                 textoModifPrecio.setText("");
                 textoModifCalorias.setText("");
                 textoModifPreparacion.setText("");
