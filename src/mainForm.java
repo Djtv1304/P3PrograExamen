@@ -98,12 +98,15 @@ public class mainForm extends JFrame {
                         textoModifPrecio.setText(String.valueOf(platoEncontrado.getPrecio()));
                         textoModifCalorias.setText(String.valueOf(platoEncontrado.getCalorias()));
                         textoModifPreparacion.setText(String.valueOf(platoEncontrado.getTiempoDePreparacion()));
+                        textoModifNombre.setEditable(true);
                     } else {
                         textAModif.setText("Ha ocurrido un error en la búsqueda, verifique los datos ingresados");
+                        textoModifNombre.setEditable(true);
                     }
 
                 } else {
                     textAModif.setText("Ingrese un nombre válido.");
+                    textoModifNombre.setEditable(true);
                 }
             }
         });
