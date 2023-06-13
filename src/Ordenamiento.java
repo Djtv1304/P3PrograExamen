@@ -72,7 +72,7 @@ public class Ordenamiento {
             Plato key = platos.get(i);
             int j = i - 1;
 
-            while (j >= 0 && platos.get(j).getCalorias() > key.getTiempoDePreparacion()) {
+            while (j >= 0 && platos.get(j).getTiempoDePreparacion() > key.getTiempoDePreparacion()) {
                 platos.set(j + 1, platos.get(j));
                 j = j - 1;
             }
